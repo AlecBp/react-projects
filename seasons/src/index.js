@@ -14,7 +14,7 @@ class App extends React.Component {
         );
     }
 
-    render() {
+    renderContent() {
         if (!this.state.lat && this.state.errorMessage) {
             return <div>Error: {this.state.errorMessage}</div>;
         }
@@ -22,6 +22,14 @@ class App extends React.Component {
             return <SeasonDisplay lat={this.state.lat} />;
         }
         return <LoadingSpinner message="Getting your position..."/>
+    }
+
+    render() {
+        return (
+            <div>
+                {this.renderContent()}
+            </div>
+        )
     }
 }
 
