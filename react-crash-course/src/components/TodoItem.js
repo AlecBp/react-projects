@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export class TodoItem extends Component {
+class TodoItem extends Component {
 	getStyle = () => {
 		if (this.props.todo.completed) {
 			return ('completed')
@@ -30,4 +30,4 @@ TodoItem.propTypes = {
 	todo: PropTypes.object.isRequired
 }
 
-export default TodoItem
+export default TodoItem;
