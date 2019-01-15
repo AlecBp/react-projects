@@ -7,10 +7,26 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
 }
+.header-style {
+  background: #333;
+  color: #fff;
+  text-align: center;
+	padding: 10px;
+}
+
 
 a {
   color: #333;
   text-decoration: none;
+}
+
+header a {
+  color: #fff;
+}
+
+#github-link-repo {
+  text-decoration: underline;
+  color: #ce7b00;
 }
 
 .not-completed {
