@@ -1,41 +1,10 @@
 {
   "streams": [
     {
-      "title": "MyStream2",
-      "description": "<->",
+      "title": "This is a test",
+      "description": "This is the description of the test",
+      "userId": "116114571861942591286",
       "id": 1
-    },
-    {
-      "title": "title",
-      "description": "desc",
-      "id": 2
-    },
-    {
-      "title": "title",
-      "description": "desc",
-      "id": 3
-    },
-    {
-      "title": "streamtest",
-      "description": "streamtestdesc",
-      "id": 4
-    },
-    {
-      "title": "NewObj",
-      "description": "desc newObj",
-      "userId": "116114571861942591286",
-      "id": 5
-    },
-    {
-      "title": "AfterPush",
-      "description": "pushing 555",
-      "id": 6
-    },
-    {
-      "title": "teste",
-      "description": "Olar",
-      "userId": "116114571861942591286",
-      "id": 7
     }
   ]
 }
