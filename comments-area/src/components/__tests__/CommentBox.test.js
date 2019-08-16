@@ -1,11 +1,16 @@
 import React from "react";
 import { mount } from "enzyme";
 import CommentBox from "components/CommentBox";
+import Root from "Root";
 
 let wrapper;
 
 beforeEach(() => {
-    wrapper = mount(<CommentBox />);
+    wrapper = mount(
+        <Root>
+            <CommentBox />
+        </Root>
+    );
 });
 
 afterEach(() => {
@@ -20,10 +25,21 @@ it("has a textarea", () => {
     expect(wrapper.find("textarea").length).toEqual(1);
 });
 
-it("change textarea text", () => {
-    wrapper.find("textarea").simulate("change", {
-        target: { value: "This is a new comment" }
+describe("textarea", () => {
+    beforeEach(() => {
+        wrapper.find("textarea").simulate("change", {
+            target: { value: "This is a new comment" }
+        });
+        wrapper.update();
     });
-    wrapper.update();
-    expect(wrapper.find("textarea").prop("value")).toEqual("This is a new comment");
+
+    it("changes textarea text", () => {
+        expect(wrapper.find("textarea").prop("value")).toEqual("This is a new comment");
+    });
+
+    it("textarea gets empty after form submit", () => {
+        wrapper.find("form").simulate("submit");
+        wrapper.update();
+        expect(wrapper.find("textarea").prop("value")).toEqual("");
+    });
 });
