@@ -14,25 +14,47 @@ class CommentBox extends Component {
         this.setState({ comment: "" });
     };
 
+    handleClear = event => {
+        this.props.clearComment();
+    };
+
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <h4>Add a Comment</h4>
-                    <textarea
-                        name="textarea"
-                        cols="100"
-                        rows="5"
-                        onChange={this.handleChange}
-                        value={this.state.comment}
-                    />
-                    <div>
-                        <button>Submit Comment</button>
-                    </div>
-                </form>
-                <button className="fetch-comments" onClick={this.props.fetchComments}>
-                    Fetch Comments
-                </button>
+            <div className="ui grid">
+                <div className="sixteen wide column">
+                    <form className="ui reply form" onSubmit={this.handleSubmit}>
+                        <h3 className="ui dividing header">Create a Comment</h3>
+                        <div className="field">
+                            <textarea
+                                name="textarea"
+                                onChange={this.handleChange}
+                                value={this.state.comment}
+                            />
+                        </div>
+                        <div>
+                            <button
+                                onClick={this.handleSubmit}
+                                className="ui blue labeled submit icon button"
+                            >
+                                <i className="icon edit" /> Submit Comment
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div className="sixteen wide column">
+                    <button
+                        className="fetch-comments ui button secondary"
+                        onClick={this.props.fetchComments}
+                    >
+                        Fetch Comments
+                    </button>
+                    <button
+                        className="clear-comments ui button negative"
+                        onClick={this.props.clearComments}
+                    >
+                        Clear Comments
+                    </button>
+                </div>
             </div>
         );
     }

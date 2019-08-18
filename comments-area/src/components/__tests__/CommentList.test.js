@@ -22,8 +22,8 @@ afterEach(() => {
     wrapper.unmount();
 });
 
-it("creates 1 LI per comment", () => {
-    expect(wrapper.find("li").length).toEqual(2);
+it("creates 1 div with comment class per comment", () => {
+    expect(wrapper.find("div.comment").length).toEqual(2);
 });
 
 it("shows text for each comment", () => {

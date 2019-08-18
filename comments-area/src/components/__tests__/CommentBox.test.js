@@ -18,7 +18,7 @@ afterEach(() => {
 });
 
 it("has 2 buttons", () => {
-    expect(wrapper.find("button").length).toEqual(2);
+    expect(wrapper.find("button").length).toEqual(3);
 });
 
 it("has a textarea", () => {
